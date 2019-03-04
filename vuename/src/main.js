@@ -11,16 +11,15 @@ import Router from 'vue-router'
 import store from './vuex/store'
 //引入组件
 import routes from './routes'
-// 引入echarts
-import echarts from 'echarts'
-Vue.config.productionTip = false;
-
 /*关闭生产模式下给出的提示*/
+Vue.config.productionTip = false;
+// 引入echarts
+//import echarts from 'echarts'
+window.echarts = require('echarts');
 /* eslint-disable no-new */
 Vue.use(ElementUI);
 /*引入路由设置*/
 Vue.use(Router);
-window.echarts = require('echarts');
 const router = new Router({
   mode: 'history',
   routes

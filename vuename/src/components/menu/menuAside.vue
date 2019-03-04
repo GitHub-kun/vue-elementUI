@@ -3,6 +3,7 @@
     <el-col :span="24">
       <el-menu
         default-active="2"
+        :collapse="isCollapse"
         class="el-menu-vertical-demo"
         @open="handleOpen"
         @close="handleClose"
@@ -10,6 +11,7 @@
         :unique-opened="true"
         text-color="#fff"
         :router="true"
+        :collapse-transition="true"
         active-text-color="#ffd04b">
         <el-menu-item index="1" route="/">
           <i class="el-icon-refresh"></i>
@@ -56,6 +58,11 @@
     data () {
       return {
 
+      }
+    },
+    computed:{
+      isCollapse:function(){
+        return this.$store.state.openClose
       }
     },
     methods:{
